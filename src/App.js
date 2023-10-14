@@ -79,7 +79,14 @@ function App() {
 
       {
         treasuremode?treasuremode=='getTreasure'?
-        <GetTreasure/>:<SetTreasure/>
+        <GetTreasure/>
+        :(<>
+        <Box sx={{display:'flex',margin:'auto',justifyContent:'center'}}>
+          <Box>
+          <SetTreasure latitude={latitude} longitude={longitude}/>
+          </Box>
+        </Box>
+        </>)
         :null
       }
 
