@@ -3,11 +3,13 @@ import '../App.css';
 import {Box,Button,Typography} from '@mui/material'
 import {useEffect,useState} from 'react'
 
-const Location = () => {
-    const [latitude, setLatitude] = useState(null)
-    const [longitude,setLongitude] = useState(null)
-    const [navigatorAvailable, setNavigatorAvailable] = useState(false)
-
+const Location = ({setLatitude,
+  setLongitude,
+  setNavigatorAvailable,
+  latitude,
+  longitude,
+  navigatorAvailable}) => {
+ 
     useEffect(()=>{
     if(navigator.geolocation){
         setNavigatorAvailable(true)
