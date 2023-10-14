@@ -2,7 +2,13 @@ import './App.css';
 import Location from './components/Location';
 import WalletConnect from './components/WalletConnect';
 import { useEffect, useState } from 'react';
-import { CircularProgress,Box,Card, Typography } from '@mui/material';
+import { CircularProgress,
+  Box,
+  Card, 
+  Typography,
+  Button} from '@mui/material';
+import GetTreasure from './components/GetTreasure';
+import SetTreasure from './components/SetTreasure';
 
 function App() {
 
@@ -16,6 +22,8 @@ function App() {
   const [provider, setProvider] = useState(null)
   const [walletBalance,setWalletBalance] = useState(null)
 
+  const [treasuremode,setTreasureMode] = useState(null)
+
   useEffect(()=>{
     if(navigator.geolocation){
       setNavigatorAvailable(true)
@@ -25,6 +33,7 @@ function App() {
       })
   }
   })
+
 
   return (
     <Box className="App">
@@ -46,12 +55,33 @@ function App() {
       </Box>
        }
     
-      <WalletConnect setDefaultAccount={setDefaultAccount}
+      <WalletConnect 
+      setDefaultAccount={setDefaultAccount}
       setSigner={setSigner}
       setContract={setContract}
       setProvider={setProvider}
-      setWalletBalance={setWalletBalance}/>
+      setWalletBalance={setWalletBalance}
+      defaultAccount={defaultAccount}
+      provider={provider}
+      walletBalance={walletBalance}
+      />
       </Box>
+
+       {
+      defaultAccount?
+      <Box sx={{display:'flex'}}>
+       <Box sx={{flexDirection:'row',margin:'auto'}}>
+       <Button onClick={()=>{setTreasureMode("setTreasure")}} variant="contained" color="success">SET TREASURE</Button> 
+       <Button onClick={()=>{setTreasureMode("getTreasure")}} variant="contained" color="warning">GET TREASURE</Button>
+       </Box>
+      </Box>:null
+      } 
+
+      {
+        treasuremode?treasuremode=='getTreasure'?
+        <GetTreasure/>:<SetTreasure/>
+        :null
+      }
 
     </Box>
   );

@@ -4,6 +4,10 @@
   min-height: 100vh;
 }
 
+Button{
+  margin:10px !important;
+}
+
 .locationBox{
   text-align: center;
   margin:auto;

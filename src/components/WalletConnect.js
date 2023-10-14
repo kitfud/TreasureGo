@@ -5,19 +5,25 @@ import ChainInfo from '../chain-info/smart_contracts.json'
 
 export const WalletContext = createContext();
 
-const WalletConnect = () => {
+const WalletConnect = ({
+    setDefaultAccount,
+     setSigner, 
+     setContract, 
+     setProvider,
+     setWalletBalance,
+     defaultAccount,
+     provider,
+     walletBalance
+    
+    }) => {
 
     const [connButtonText, setConnButtonText] = useState('Connect Wallet');
     const [accountchanging, setAccountChanging] = useState(false)
     const [errorMessage, setErrorMessage] = useState(null);
     const [connectButtonColor, setConnectButtonColor] = useState("primary")
     const [processing, setProcessing] = useState(false)
-    const [defaultAccount,setDefaultAccount] = useState(null)
-    const [signer, setSigner] = useState(null)
-    const [contract, setContract] = useState(null)
-    const [provider, setProvider] = useState(null)
-    const [walletBalance,setWalletBalance] = useState(null)
-    
+  
+
 
     const address = ChainInfo.deploymentAddress.sepoloia
     const abi = ChainInfo.abi
