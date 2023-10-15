@@ -1,6 +1,6 @@
 {   "deploymentAddress":
         {
-        "sepoloia":"0x3BF337335968E98C412bdff7DdC7FbD50D94d93E"
+        "sepolia":"0x3BF337335968E98C412bdff7DdC7FbD50D94d93E"
         },
     "abi":[
 	{

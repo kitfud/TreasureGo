@@ -6,7 +6,7 @@ import ChainInfo from '../chain-info/smart_contracts.json'
 export const WalletContext = createContext();
 
 const WalletConnect = ({
-    setDefaultAccount,
+     setDefaultAccount,
      setSigner, 
      setContract, 
      setProvider,
@@ -25,7 +25,7 @@ const WalletConnect = ({
   
 
 
-    const address = ChainInfo.deploymentAddress.sepoloia
+    const address = ChainInfo.deploymentAddress.sepolia
     const abi = ChainInfo.abi
 
     const connectWalletHandler = () => {

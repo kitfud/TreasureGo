@@ -14,8 +14,8 @@ const Location = ({setLatitude,
     if(navigator.geolocation){
         setNavigatorAvailable(true)
         navigator.geolocation.watchPosition(function(position){
-            setLatitude(position.coords.latitude)
-            setLongitude(position.coords.longitude)
+            setLatitude(Math.round(position.coords.latitude*1000)/1000)
+            setLongitude(Math.round(position.coords.longitude*1000)/1000)
         })
     }
     },[])

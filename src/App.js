@@ -9,6 +9,7 @@ import { CircularProgress,
   Button} from '@mui/material';
 import GetTreasure from './components/GetTreasure';
 import SetTreasure from './components/SetTreasure';
+import SmartContracts from './chain-info/smart_contracts.json'
 
 function App() {
 
@@ -24,12 +25,14 @@ function App() {
 
   const [treasuremode,setTreasureMode] = useState(null)
 
+  const TreasureGoAddress = SmartContracts.deploymentAddress.sepolia
+
   useEffect(()=>{
     if(navigator.geolocation){
       setNavigatorAvailable(true)
       navigator.geolocation.watchPosition(function(position){
-          setLatitude(position.coords.latitude)
-          setLongitude(position.coords.longitude)
+          setLatitude(Math.round(position.coords.latitude*1000)/1000)
+          setLongitude(Math.round(position.coords.longitude*1000)/1000)
       })
   }
   })
@@ -83,7 +86,12 @@ function App() {
         :(<>
         <Box sx={{display:'flex',margin:'auto',justifyContent:'center'}}>
           <Box>
-          <SetTreasure latitude={latitude} longitude={longitude}/>
+          <SetTreasure latitude={latitude} 
+          longitude={longitude}
+          contract={contract}
+          signer={signer}
+          contractAddress={TreasureGoAddress}
+          provider={provider}/>
           </Box>
         </Box>
         </>)
