@@ -133,8 +133,8 @@ const recordTreasureDeposit = async ()=>{
     try{
             console.log("treasure deployment attempt")
             const amountAsWei = ethers.utils.parseEther(treasureAmount)
-            const lat = parseInt(selectLatitude)
-            const long = parseInt(selectLongitude)
+            const lat = parseInt(adjustedLatitude)
+            const long = parseInt(adjustedLongitude)
             const tx = await contract.recordTreasureDeposit(lat,long,amountAsWei)
             let hash = tx.hash
             setTxHash(hash.toString())

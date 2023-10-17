@@ -82,7 +82,9 @@ function App() {
 
       {
         treasuremode?treasuremode=='getTreasure'?
-        <GetTreasure/>
+        <GetTreasure contract={contract} 
+        userLatitude={latitude} 
+        userLongitude={longitude}/>
         :(<>
         <Box sx={{display:'flex',margin:'auto',justifyContent:'center'}}>
           <Box>
