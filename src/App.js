@@ -10,6 +10,7 @@ import { CircularProgress,
 import GetTreasure from './components/GetTreasure';
 import SetTreasure from './components/SetTreasure';
 import SmartContracts from './chain-info/smart_contracts.json'
+import { ethers } from 'ethers';
 
 function App() {
 
@@ -37,6 +38,14 @@ function App() {
   }
   })
 
+  const getWalletBalance = async (provider) => {
+    // Look up the balance
+    if (provider !== null  && defaultAccount !== null) {
+        let balance = await provider.getBalance(defaultAccount);
+        setWalletBalance(ethers.utils.formatEther(balance))
+    }
+
+}
 
   return (
     <Box className="App">
@@ -84,7 +93,11 @@ function App() {
         treasuremode?treasuremode=='getTreasure'?
         <GetTreasure contract={contract} 
         userLatitude={latitude} 
-        userLongitude={longitude}/>
+        userLongitude={longitude}
+        provider={provider}
+        setWalletBalance={setWalletBalance}
+        defaultAccount={defaultAccount}
+        walletBalance={walletBalance}/>
         :(<>
         <Box sx={{display:'flex',margin:'auto',justifyContent:'center'}}>
           <Box>
@@ -93,7 +106,8 @@ function App() {
           contract={contract}
           signer={signer}
           contractAddress={TreasureGoAddress}
-          provider={provider}/>
+          provider={provider}
+          getWalletBalance={getWalletBalance}/>
           </Box>
         </Box>
         </>)

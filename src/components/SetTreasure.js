@@ -1,5 +1,5 @@
 import React from 'react'
-import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
+import { GoogleMap, useJsApiLoader,Marker } from '@react-google-maps/api';
 import { useEffect, useState } from 'react';
 import { ethers } from 'ethers';
 import { CircularProgress,
@@ -108,14 +108,9 @@ const isTransactionMined = async (transactionHash) => {
                 transactionBlockFound = true
                 let stringBlock = tx.blockNumber.toString()
                 console.log("COMPLETED BLOCK: " + stringBlock)
-              
-    
             
-                
-    
             }
         }
-    
     
     }
     
@@ -157,7 +152,7 @@ const recordTreasureDeposit = async ()=>{
         const bounds = new window.google.maps.LatLngBounds(center);
         map.fitBounds(bounds);
     
-        setMap(map)
+       setTimeout(()=> setMap(map),100)
       }, [])
     
       const onUnmount = React.useCallback(function callback(map) {
@@ -170,11 +165,11 @@ const recordTreasureDeposit = async ()=>{
             onClick={_onClick}
             mapContainerStyle={containerStyle}
             center={center}
-            zoom={5}
+            zoom={7}
             onLoad={onLoad}
             onUnmount={onUnmount}
           >
-        <></>
+          
         </GoogleMap>
         <Box>
         <Typography>User Selected Treasure Coordinates:</Typography>
