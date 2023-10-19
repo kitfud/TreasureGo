@@ -119,13 +119,18 @@ if(counter ==treasureArray.length){
 console.log("TABLE DATA",tabledata)
   },[tabledata])
 
-const getTreasure = async (userLat,userLong,ID)=>{
+const getTreasure = async (userLat,userLong,ID,webkey)=>{
   setProcessing(true)
-  console.log("data",{"lat":userLat,"long":userLong,"ID":ID})
-  let tx = await contract.getTreasure(userLat,userLong,ID)
+  //console.log("data",{"lat":userLat,"long":userLong,"ID":ID})
+  try{
+  let tx = await contract.getTreasure(userLat,userLong,ID,webkey)
   let hash = tx.hash
   setTxHash(hash.toString())
   isTransactionMined(hash.toString())
+  }
+  catch(err){
+    console.log(err)
+  }
 }
 
 
@@ -272,7 +277,10 @@ const getWalletBalance = async (provider) => {
                                 row.latitude==userLatitude&&row.longitude==userLongitude?
                                     !processing?
                                     <Button
-                                      onClick={()=>{getTreasure(userLatitude*1000,userLongitude*1000,row.treasureId)}}
+                                      onClick={()=>{
+                                        console.log("KEY",process.env.REACT_APP_WEB_KEY)
+                                        getTreasure(userLatitude*1000,userLongitude*1000,row.treasureId,process.env.REACT_APP_WEB_KEY)
+                                      }}
                                       variant='contained'
                                       color="error"
                                     >

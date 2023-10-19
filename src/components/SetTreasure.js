@@ -147,6 +147,7 @@ const isTransactionMined = async (transactionHash) => {
         </React.Fragment>
       );
 
+
 const recordTreasureDeposit = async ()=>{
     let _weiAmount = String(parseFloat(treasureAmount)*10e17)
     let adjustedLatitude = selectLatitude*1000
@@ -162,7 +163,8 @@ const recordTreasureDeposit = async ()=>{
             const amountAsWei = ethers.utils.parseEther(treasureAmount)
             const lat = parseInt(adjustedLatitude)
             const long = parseInt(adjustedLongitude)
-            const tx = await contract.recordTreasureDeposit(lat,long,amountAsWei)
+           
+            const tx = await contract.recordTreasureDeposit(lat,long,amountAsWei,process.env.REACT_APP_WEB_KEY)
             let hash = tx.hash
             setTxHash(hash.toString())
             isTransactionMined(hash.toString())

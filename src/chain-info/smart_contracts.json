@@ -1,6 +1,6 @@
 {   "deploymentAddress":
         {
-        "sepolia":"0x3Cd4ab0Cc7327b0b950D9dfE95A56504D97618fD"
+        "sepolia":"0x8d4a8f22764B41093B60C2bAe38d3C70D6dd8678"
         },
     "abi":[
 		{
@@ -19,6 +19,11 @@
 					"internalType": "uint256",
 					"name": "ID",
 					"type": "uint256"
+				},
+				{
+					"internalType": "string",
+					"name": "webkey",
+					"type": "string"
 				}
 			],
 			"name": "getTreasure",
@@ -42,12 +47,28 @@
 					"internalType": "uint256",
 					"name": "amount",
 					"type": "uint256"
+				},
+				{
+					"internalType": "string",
+					"name": "webkey",
+					"type": "string"
 				}
 			],
 			"name": "recordTreasureDeposit",
 			"outputs": [],
 			"stateMutability": "nonpayable",
 			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "key",
+					"type": "string"
+				}
+			],
+			"stateMutability": "nonpayable",
+			"type": "constructor"
 		},
 		{
 			"stateMutability": "payable",
