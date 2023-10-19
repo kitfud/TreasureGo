@@ -10,6 +10,8 @@ import { CircularProgress,
   TextField,
   Snackbar
 } from '@mui/material';
+import IconButton from '@mui/material/IconButton';
+import CloseIcon from '@mui/icons-material/Close';
   
   const containerStyle = {
     width: '400px',
@@ -30,8 +32,10 @@ const SetTreasure = ({latitude,
     const [treasureAmount, setTreasureAmount] = useState(null)
 
     const [processing, setProcessing] = useState(false)
-    const [txhash, setTxHash] = useState(null)
+    const [txHash, setTxHash] = useState(null)
     const [transactionPosted, setTransactionPosted] = useState(false)
+
+    const [openSnackbar,setOpenSnackBar] = useState(false)
     
     const { isLoaded } = useJsApiLoader({
         id: 'google-map-script',
@@ -108,12 +112,40 @@ const isTransactionMined = async (transactionHash) => {
                 transactionBlockFound = true
                 let stringBlock = tx.blockNumber.toString()
                 console.log("COMPLETED BLOCK: " + stringBlock)
+                setOpenSnackBar(true)
             
             }
         }
     
     }
     
+    const handleClose = (event, reason) => {
+        if (reason === 'clickaway') {
+          return;
+        }
+        setOpenSnackBar(false);
+      
+      };
+      
+      const action = (
+        <React.Fragment>
+          <Button
+            color="secondary"
+            size="small"
+            onClick={handleClose}
+          >
+            UNDO
+          </Button>
+          <IconButton
+            size="small"
+            aria-label="close"
+            color="inherit"
+            onClick={handleClose}
+          >
+            <CloseIcon fontSize="small" />
+          </IconButton>
+        </React.Fragment>
+      );
 
 const recordTreasureDeposit = async ()=>{
     let _weiAmount = String(parseFloat(treasureAmount)*10e17)
@@ -161,6 +193,27 @@ const recordTreasureDeposit = async ()=>{
     
       return isLoaded ? (
   <>
+      <Snackbar
+          anchorOrigin={{
+            vertical: 'bottom',
+            horizontal: 'center'
+          }}
+          open={openSnackbar}
+          autoHideDuration={4000}
+          onClose={handleClose}
+          message=""
+          action={action}
+          sx={{
+            backgroundColor:"white"
+          }}
+        >
+          <a target="_blank" href={`https://sepolia.etherscan.io/tx/${txHash}`}>
+            <Typography color="black">
+              Success-Treasure Deposited! Click for Transaction:${txHash} on Etherscan
+            </Typography>
+           
+          </a>
+        </Snackbar>
       <GoogleMap
             onClick={_onClick}
             mapContainerStyle={containerStyle}
