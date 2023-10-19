@@ -80,7 +80,7 @@ function App() {
       </Box>
 
        {
-      defaultAccount?
+      defaultAccount && latitude && longitude?
       <Box sx={{display:'flex'}}>
        <Box sx={{flexDirection:'row',margin:'auto'}}>
        <Button onClick={()=>{setTreasureMode("setTreasure")}} variant="contained" color="success">SET TREASURE</Button> 
