@@ -41,7 +41,7 @@ function App() {
           setLongitude(Math.round(position.coords.longitude*1000)/1000)
       })
   }
-  })
+  },[])
 
   const getWalletBalance = async (provider) => {
     // Look up the balance
