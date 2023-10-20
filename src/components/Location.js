@@ -11,7 +11,7 @@ const Location = ({setLatitude,
   navigatorAvailable}) => {
  
     useEffect(()=>{
-    if(navigator.geolocation){
+    if(navigator.geolocation && latitude && longitude){
         setNavigatorAvailable(true)
         navigator.geolocation.watchPosition(function(position){
             setLatitude(Math.round(position.coords.latitude*1000)/1000)
