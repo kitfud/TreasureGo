@@ -26,7 +26,12 @@ function App() {
 
   const [treasuremode,setTreasureMode] = useState(null)
 
-  const TreasureGoAddress = SmartContracts.deploymentAddress.sepolia
+  //Sepolia network 
+  //const TreasureGoAddress = SmartContracts.deploymentAddress.sepolia
+
+  //Scroll Sepolia testnet
+  const TreasureGoAddress = SmartContracts.deploymentAddress.scroll_sepolia
+
 
   useEffect(()=>{
     if(navigator.geolocation){
@@ -46,6 +51,10 @@ function App() {
     }
 
 }
+
+useEffect(()=>{
+  console.log("CONTRACT",contract)
+},[contract])
 
   return (
     <Box className="App">
@@ -97,7 +106,8 @@ function App() {
         provider={provider}
         setWalletBalance={setWalletBalance}
         defaultAccount={defaultAccount}
-        walletBalance={walletBalance}/>
+        walletBalance={walletBalance}
+        address={TreasureGoAddress}/>
         :(<>
         <Box sx={{display:'flex',margin:'auto',justifyContent:'center'}}>
           <Box>

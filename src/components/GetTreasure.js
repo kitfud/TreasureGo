@@ -33,7 +33,8 @@ const GetTreasure = ({contract,
   provider,
   defaultAccount,
   setWalletBalance,
-  wallletBalance
+  wallletBalance,
+  address
   }) => {
 
   const [treasureArray, setTreasrureArray] = useState([])
@@ -70,8 +71,13 @@ const GetTreasure = ({contract,
   }, [])
 
   async function getData(){
+    try{
     let data = await contract.getTreasureArray()
     setTreasrureArray(data)
+    }
+    catch(err){
+      console.log(err.message)
+    }
     //console.log(data)
     let founddata = await contract.getFoundArray()
     setFoundArray(founddata)
@@ -172,6 +178,7 @@ const handleClose = (event, reason) => {
   }
   setOpenSnackBar(false);
   window.location.reload()
+  window.scrollTo(0, 0);
 };
 
 const action = (
@@ -205,7 +212,9 @@ const getWalletBalance = async (provider) => {
 
   return (
     <>
-    <Box>Get Treasure</Box>
+    <Box>
+     <Typography color="black">Get Treasure</Typography> 
+      </Box>
     <Snackbar
           anchorOrigin={{
             vertical: 'bottom',

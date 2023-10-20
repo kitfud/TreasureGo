@@ -25,7 +25,7 @@ const WalletConnect = ({
   
 
 
-    const address = ChainInfo.deploymentAddress.sepolia
+    const address = ChainInfo.deploymentAddress.scroll_sepolia
     const abi = ChainInfo.abi
 
     const connectWalletHandler = () => {
@@ -67,11 +67,11 @@ const WalletConnect = ({
     const updateEthers = async () => {
         let tempProvider = await new ethers.providers.Web3Provider(window.ethereum);
         setProvider(tempProvider);
-
         let tempSigner = await tempProvider.getSigner();
         setSigner(tempSigner);
-
+       
         let tempContract = await new ethers.Contract(address, abi, tempSigner);
+      
         setContract(tempContract);
 
     }

@@ -209,9 +209,9 @@ const recordTreasureDeposit = async ()=>{
             backgroundColor:"white"
           }}
         >
-          <a target="_blank" href={`https://sepolia.etherscan.io/tx/${txHash}`}>
+          <a target="_blank" href={`https://sepolia.scrollscan.com/tx/${txHash}`}>
             <Typography color="black">
-              Success-Treasure Deposited! Click for Transaction:${txHash} on Etherscan
+              Success-Treasure Deposited! Click for Transaction:${txHash} on Scroll Scan
             </Typography>
            
           </a>
@@ -244,6 +244,13 @@ const recordTreasureDeposit = async ()=>{
    color="success"
    onClick={handleDeposit}
    >Deposit Treasure</Button>
+   <Card sx={{backgroundColor:'green'}}>
+   <Typography sx={{color:'yellow'}}>Note:Two Transaction Signings Necessary</Typography>
+   <hr></hr>
+   <Typography>1.Depositing Treasure Amount</Typography>
+   <Typography>2.Record Treasure Location Map</Typography>
+   </Card>
+
    </Box>:
    <Box sx={{marginTop:'20px'}}>
    <CircularProgress/>

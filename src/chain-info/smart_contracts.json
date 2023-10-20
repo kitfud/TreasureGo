@@ -1,64 +1,9 @@
-{   "deploymentAddress":
-        {
-        "sepolia":"0x8d4a8f22764B41093B60C2bAe38d3C70D6dd8678"
-        },
-    "abi":[
-		{
-			"inputs": [
-				{
-					"internalType": "int256",
-					"name": "latitude",
-					"type": "int256"
-				},
-				{
-					"internalType": "int256",
-					"name": "longitude",
-					"type": "int256"
-				},
-				{
-					"internalType": "uint256",
-					"name": "ID",
-					"type": "uint256"
-				},
-				{
-					"internalType": "string",
-					"name": "webkey",
-					"type": "string"
-				}
-			],
-			"name": "getTreasure",
-			"outputs": [],
-			"stateMutability": "nonpayable",
-			"type": "function"
-		},
-		{
-			"inputs": [
-				{
-					"internalType": "int256",
-					"name": "latitude",
-					"type": "int256"
-				},
-				{
-					"internalType": "int256",
-					"name": "longitude",
-					"type": "int256"
-				},
-				{
-					"internalType": "uint256",
-					"name": "amount",
-					"type": "uint256"
-				},
-				{
-					"internalType": "string",
-					"name": "webkey",
-					"type": "string"
-				}
-			],
-			"name": "recordTreasureDeposit",
-			"outputs": [],
-			"stateMutability": "nonpayable",
-			"type": "function"
-		},
+{
+	"deploymentAddress": {
+		"sepolia": "0x8d4a8f22764B41093B60C2bAe38d3C70D6dd8678",
+		"scroll_sepolia": "0x6c2b8b4365C7d83bcDcB74B2469B0F679a8594C8"
+	},
+	"abi": [
 		{
 			"inputs": [
 				{
@@ -69,29 +14,6 @@
 			],
 			"stateMutability": "nonpayable",
 			"type": "constructor"
-		},
-		{
-			"stateMutability": "payable",
-			"type": "receive"
-		},
-		{
-			"inputs": [
-				{
-					"internalType": "uint256",
-					"name": "num",
-					"type": "uint256"
-				}
-			],
-			"name": "existsInFound",
-			"outputs": [
-				{
-					"internalType": "bool",
-					"name": "",
-					"type": "bool"
-				}
-			],
-			"stateMutability": "view",
-			"type": "function"
 		},
 		{
 			"inputs": [
@@ -107,6 +29,69 @@
 					"internalType": "uint256",
 					"name": "",
 					"type": "uint256"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "",
+					"type": "uint256"
+				}
+			],
+			"name": "TreasureChest",
+			"outputs": [
+				{
+					"internalType": "address",
+					"name": "depositor",
+					"type": "address"
+				},
+				{
+					"internalType": "uint256",
+					"name": "amount",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "treasureID",
+					"type": "uint256"
+				},
+				{
+					"internalType": "int256",
+					"name": "latitude",
+					"type": "int256"
+				},
+				{
+					"internalType": "int256",
+					"name": "longitude",
+					"type": "int256"
+				},
+				{
+					"internalType": "bool",
+					"name": "isTreasureFound",
+					"type": "bool"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "num",
+					"type": "uint256"
+				}
+			],
+			"name": "existsInFound",
+			"outputs": [
+				{
+					"internalType": "bool",
+					"name": "",
+					"type": "bool"
 				}
 			],
 			"stateMutability": "view",
@@ -136,6 +121,34 @@
 				}
 			],
 			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "int256",
+					"name": "latitude",
+					"type": "int256"
+				},
+				{
+					"internalType": "int256",
+					"name": "longitude",
+					"type": "int256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "ID",
+					"type": "uint256"
+				},
+				{
+					"internalType": "string",
+					"name": "webkey",
+					"type": "string"
+				}
+			],
+			"name": "getTreasure",
+			"outputs": [],
+			"stateMutability": "nonpayable",
 			"type": "function"
 		},
 		{
@@ -186,29 +199,6 @@
 		{
 			"inputs": [
 				{
-					"internalType": "uint256",
-					"name": "",
-					"type": "uint256"
-				}
-			],
-			"name": "TreasureChest",
-			"outputs": [
-				{
-					"internalType": "address",
-					"name": "depositor",
-					"type": "address"
-				},
-				{
-					"internalType": "uint256",
-					"name": "amount",
-					"type": "uint256"
-				},
-				{
-					"internalType": "uint256",
-					"name": "treasureID",
-					"type": "uint256"
-				},
-				{
 					"internalType": "int256",
 					"name": "latitude",
 					"type": "int256"
@@ -219,13 +209,24 @@
 					"type": "int256"
 				},
 				{
-					"internalType": "bool",
-					"name": "isTreasureFound",
-					"type": "bool"
+					"internalType": "uint256",
+					"name": "amount",
+					"type": "uint256"
+				},
+				{
+					"internalType": "string",
+					"name": "webkey",
+					"type": "string"
 				}
 			],
-			"stateMutability": "view",
+			"name": "recordTreasureDeposit",
+			"outputs": [],
+			"stateMutability": "nonpayable",
 			"type": "function"
+		},
+		{
+			"stateMutability": "payable",
+			"type": "receive"
 		}
 	]
 }
