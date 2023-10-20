@@ -52,9 +52,7 @@ function App() {
 
 }
 
-useEffect(()=>{
-  console.log("CONTRACT",contract)
-},[contract])
+
 
   return (
     <Box className="App">
@@ -63,7 +61,7 @@ useEffect(()=>{
       </header>
       <Box>
       
-       {latitude?
+       {latitude && longitude?
       <Location setLatitude={setLatitude}
       setLongitude={setLongitude}
       setNavigatorAvailable={setNavigatorAvailable}
