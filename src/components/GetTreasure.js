@@ -229,9 +229,9 @@ const getWalletBalance = async (provider) => {
             backgroundColor:"white"
           }}
         >
-          <a target="_blank" href={`https://sepolia.etherscan.io/tx/${txHash}`}>
+          <a target="_blank" href={`https://sepolia.scrollscan.com/tx/${txHash}`}>
             <Typography color="black">
-              Success-Treasure Collected! Click for Transaction:${txHash} on Etherscan
+              Success-Treasure Collected! Click for Transaction:${txHash} on Scroll Scan
             </Typography>
             <Typography>Page will reload momentarily to refresh table.</Typography>
           </a>
