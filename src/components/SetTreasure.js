@@ -245,7 +245,8 @@ const recordTreasureDeposit = async ()=>{
    onClick={handleDeposit}
    >Deposit Treasure</Button>
    <Card sx={{backgroundColor:'green'}}>
-   <Typography sx={{color:'yellow'}}>Note:Two Transaction Signings Necessary</Typography>
+   <Typography sx={{color:'yellow'}}>
+    <Typography sx={{color:'red'}}>Note:</Typography>Two Transaction Signings Necessary Upon Deposit</Typography>
    <hr></hr>
    <Typography>1.Depositing Treasure Amount</Typography>
    <Typography>2.Record Treasure Location Map</Typography>
