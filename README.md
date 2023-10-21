@@ -2,20 +2,20 @@
 
 ## Created for ETHOnline 2023 
 
-##Summary
+## Summary
 TreasureGo! is an experimental interface for distributing cryptocurrency. The current dApp deployment is to the layer 2 blockchain, Scroll. The dApp, TreasureGo! allows a user to set a physical geographic location for Scroll Ethereum to be deposited. A user overlapping this geographic region with an Ethereum deposit can in turn collect the amount by using the dApp. 
 
 Think PokemonGo combined with crypto- and therin lies the concept behind TreasureGo!
 
-##dApp Problem Statement
+## dApp Problem Statement
 At a simplistic level, TreasureGo can be utilized as a kind of game, akin to PokemonGo!, where a user deposits an amount of Ethereum to be collected at a set geographic location. The technology within the concept itself can be extended to use cases such as HR payment disbursmens for workers arriving at a particular geographic region; moreoever, the idea of crypto tied to geographic location can function as a means for mobilizing people to visit locations as a type of incentivisation. 
 
 The possibilities with TreasureGo! are vast and the bridge between the crypto relm and the physical relm is where the value lies within the concept; both on an artistic level, for a level of gamification, as well as a functional level on the level of payment disbursments tied to a unique parameter- device presnece at a physical location. 
 
-##TreasureGo! 
+## TreasureGo! 
 The promise of cryptocurrency is the treasure which ultimately lies in promise of freedom untethered from centralized control. For some this means- leave some crypto to be collected in any geographic location. Set the destination, drop some crypto; buckle up those treasure hunting boots and go, go, go! 
 
-##Smart Contract Patterns
+## Smart Contract Patterns
 -`TreasureGo.sol`: a single smart contract provides the backdrop for the experimental dApp/prototype, TreasureGo!. The TreasureGo! contract records deposit amounts made to the contract address, latitude and longitude parameters- as selected by the depositor for their ethereum amount. Collections via the TreasureGo.sol are made via a function which takes input paramaters: (latitude, longitude, 'the treasure ID',webkey).
 
 The webkey paramter passed into the TreasureGo.sol contract is an attempt to make the contract callable only by the TresureGo! web dApp [note: current deployment is currently functional on desktop and not mobile]. This is important because location data for a user is pulled from the front end which uses the inbuilt properties of a webbrowser location services. When a user deployes a TresureGo.sol contract there is one input constructor argument a user passes is which is hashed (keccak256(abi.encodePacked(clientKey));) and then saved within the contract as a private variable. the one way hashing of the constructor attempts to mask the original paramater passed in and makes is a bit harder for 'bad actors' to comprimise. 
@@ -30,9 +30,9 @@ TreasureGo! has been built for the L2 Scroll test network; upon reseraching the 
 From the following link you can also collect Scroll Sepolia ETH used to deploy and interact with the front end: https://sepolia.scroll.io/bridge
 
 
-2. Use Remix,https://remix.ethereum.org/, to deploy your own TreasureGo.sol contract- pass in a constructor/string argument which defines your 'webkey.' This must be consistent with what is eventually stored on the front end inside a .env file. 
+2. Use Remix, https://remix.ethereum.org/, to deploy your own TreasureGo.sol contract- pass in a constructor/string argument which defines your 'webkey.' This must be consistent with what is eventually stored on the front end inside a .env file. 
 
-3. TreasureGo! relies on maps for depositing and finding treasure; and to make things easy on myself I went with utilizing Google Maps. Which means that users wishing to deploy their own TreasureGo! dApp must sign up for a Google Developers Account and enable the Maps API:https://developers.google.com/maps/get-started
+3. TreasureGo! relies on maps for depositing and finding treasure; and to make things easy on myself I went with utilizing Google Maps. Which means that users wishing to deploy their own TreasureGo! dApp must sign up for a Google Developers Account and enable the Maps API: https://developers.google.com/maps/get-started
 
 4. Clone the repo and create a .env in your front end root folder with the following information outlined below- inserting your web_key (string constructor argument used on Treasure.sol deployment) as REACT_APP_WEB_KEY and REACT_APP_API: as the Google Maps API key registered:
 
