@@ -80,6 +80,7 @@ https://treasurego.netlify.app/
 -<strong>Remix</strong>: The single tool used for the development and testing of the smart contract TreasureGo.sol.
 -<strong>Google Maps API</strong>: Creates the accurate maps used on the front end for selecting deposit locations as well as visualizing crypto deposit locations via the dApp
 -<strong>Chrome Browser</strong>: Provides the location services used by the dApp to determine a user's location and whether they are in enough proximity to deposited treasure to collect it. 
+-<strong>React.js</strong>: Front-end framework of choice for creating the TreasureGo! web interface
 
 ## Concluding Thoughts
 
