@@ -1,5 +1,5 @@
 
-# Treasure Go! 
+# Treasure Go!: Location Based Crypto Distribution 
 
 ## Created for ETHOnline 2023 
 
@@ -74,13 +74,13 @@ https://treasurego.netlify.app/
 -<ins>Get Treasure View Treasure Map</ins>: Below the 'Get Treasure' table is another Google Map where the user's location is indicated by a red pin. Deposited treasure is indicated by yellow pins on the map. This will help a user orient themselves as they seek treasure. 
 
 ## Tools and Frameworks Used
--<strong>Scroll Network</strong>: Affordable, scalable and fast- the Scroll (testnet) provides a perfect backdrop for testing and performance
--<strong>Ethers.js</strong>: The utility library for interacting with the Treasure.sol contract and converting data for viewing on the front end
--<strong>MetaMask</strong>: The web extension interface for Ethers.js to pull from to create the signer object
--<strong>Remix</strong>: The single tool used for the development and testing of the smart contract TreasureGo.sol.
--<strong>Google Maps API</strong>: Creates the accurate maps used on the front end for selecting deposit locations as well as visualizing crypto deposit locations via the dApp
--<strong>Chrome Browser</strong>: Provides the location services used by the dApp to determine a user's location and whether they are in enough proximity to deposited treasure to collect it. 
--<strong>React.js</strong>: Front-end framework of choice for creating the TreasureGo! web interface
+- <strong>Scroll Network</strong>: Affordable, scalable and fast- the Scroll (testnet) provides a perfect backdrop for testing and performance
+- <strong>Ethers.js</strong>: The utility library for interacting with the Treasure.sol contract and converting data for viewing on the front end
+- <strong>MetaMask</strong>: The web extension interface for Ethers.js to pull from to create the signer object
+- <strong>Remix</strong>: The single tool used for the development and testing of the smart contract TreasureGo.sol.
+- <strong>Google Maps API</strong>: Creates the accurate maps used on the front end for selecting deposit locations as well as visualizing crypto deposit locations via the dApp
+- <strong>Chrome Browser</strong>: Provides the location services used by the dApp to determine a user's location and whether they are in enough proximity to deposited treasure to collect it. 
+- <strong>React.js</strong>: Front-end framework of choice for creating the TreasureGo! web interface
 
 ## Concluding Thoughts
 
