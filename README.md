@@ -21,7 +21,7 @@ The promise of cryptocurrency is freedom untethered from centralized control. Fo
 Set the destination, drop some crypto, buckle up those boots and go, go, go! 
 
 <p align="center">
-<img  width="50%" src="dAppScreenshots/Logo.png">
+<img  width="90%" src="dAppScreenshots/Logo.png">
 </p>
 
 ## Smart Contract Patterns
@@ -94,7 +94,7 @@ https://treasurego.netlify.app/
 -<ins>Latitude and Longitude Display</ins>: Upon grating location services permissions a users latitude and longitude is displayed
 
 <p align="center">
-<img  width="25%" src="dAppScreenshots/Landing.png">
+<img  width="100%" src="dAppScreenshots/Landing.png">
 </p>
 
 -<ins>Wallet Connect Button</ins>: A wallet connect button provides a connection to MetaMask and displays a user's address as well as wallet balance in Scroll Sepolia ETH
@@ -102,19 +102,19 @@ https://treasurego.netlify.app/
 -<ins>Set Treasure View</ins>: If a user selects the 'Set Treasure' button they will see a Google Map element set in proximity to their current location. A user can click on the map to set a deposit location (latitude/longitude) and also complete a text field to set the amount of ETH to be deposited there. Clicking the deposit button requires signing two transaction- one to transfer said amount of ETH to the TreasureGo.sol contract and the second transaction write is to 'record' the location on the contract as a form of a map. 
 
 <p align="center">
-<img  width="25%" src="dAppScreenshots/SetTreasure.png">
+<img  width="100%" src="dAppScreenshots/SetTreasure.png">
 </p>
 
 -<ins>Get Treasure View</ins>: If a user selects the 'Get Treasure' button they will be prompted with a table with recorded treasure locations. If their current location status (as passed by the browser data) overlaps with their current location a red 'Collect Treasure' button will render in the specific row of the treasure table. 
 
 <p align="center">
-<img  width="25%" src="dAppScreenshots/GetTreasure.png">
+<img  width="100%" src="dAppScreenshots/GetTreasure.png">
 </p>
 
 -<ins>Get Treasure View Treasure Map</ins>: Below the 'Get Treasure' table is another Google Map where the user's location is indicated by a red pin. Deposited treasure is indicated by yellow pins on the map. This will help a user orient themselves as they seek treasure. 
 
 <p align="center">
-<img  width="25%" src="dAppScreenshots/TreasureMapVisualization.png">
+<img  width="100%" src="dAppScreenshots/TreasureMapVisualization.png">
 </p>
 
 ## Tools and Frameworks Used
